@@ -2,6 +2,7 @@
 
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import ClickSpark from "./ui/clickspark";
 
 export default function HeroSection() {
   return (
@@ -10,7 +11,7 @@ export default function HeroSection() {
       <div className="container mx-auto px-4 md:px-6 z-20 relative">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col items-start space-y-8">
-            <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold tracking-tighter text-stone-800 dark:text-white animate-slide-up">
+            <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold tracking-tighter text-stone-800 dark:text-white animate-slide-up pr-3 select-none">
               <span className="block">Hello,</span>
               <span className="block mt-2">I am Adjei</span>
             </h1>
@@ -20,13 +21,21 @@ export default function HeroSection() {
             </p>
 
             <div className="pt-4 animate-fade-in-delay">
-              <Link
-                href="#work"
-                className="group inline-flex items-center gap-2 text-lg font-medium px-6 py-3 border-2 border-stone-950 dark:border-white text-stone-900 dark:text-white hover:bg-stone-900 dark:hover:bg-white hover:text-white dark:hover:text-stone-900 transition-all duration-300"
+              <ClickSpark
+                sparkColor="#000"
+                sparkSize={10}
+                sparkRadius={15}
+                sparkCount={8}
+                duration={400}
               >
-                View Projects
-                <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
+                <Link
+                  href="#work"
+                  className="group inline-flex items-center gap-2 text-lg font-medium px-6 py-3 border-2  border-stone-950 dark:border-white text-stone-900 dark:text-white hover:bg-stone-900 dark:hover:bg-white hover:text-white dark:hover:text-stone-900 transition-all duration-300"
+                >
+                  View Projects
+                  <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </ClickSpark>
             </div>
           </div>
         </div>

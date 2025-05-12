@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import ClickSpark from "./ui/clickspark";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,8 +24,8 @@ export default function Header() {
   }, [scrolled]);
 
   const navItems = [
-    { name: "Work", href: "/work" },
     { name: "About", href: "/about" },
+    { name: "Work", href: "/work" },
     { name: "Process", href: "/process" },
     { name: "Contact", href: "/contact" },
   ];
@@ -34,7 +35,7 @@ export default function Header() {
       className={cn(
         "fixed top-0 left-0 w-full z-50 transition-all duration-500",
         scrolled
-          ? "py-3 bg-white/90 backdrop-blur-md shadow-sm"
+          ? "py-3 bg-transparent/90 backdrop-blur-md shadow-sm border-b border-black/10 dark:border-white/10"
           : "py-6 bg-transparent"
       )}
     >
@@ -72,16 +73,24 @@ export default function Header() {
                 ></span>
               </Link>
             ))}
-            <Link
-              href="/hire-me"
-              className="ml-4 px-5 py-2 border border-black dark:border-white rounded-full text-sm font-medium uppercase tracking-wider hover:bg-black hover:text-white dark:text-white dark:hover:bg-white dark:hover:text-black transition-colors duration-300 flex items-center gap-1 group"
+            <ClickSpark
+              sparkColor="#000"
+              sparkSize={10}
+              sparkRadius={15}
+              sparkCount={8}
+              duration={400}
             >
-              <span>Hire Me</span>
-              <ArrowUpRight
-                className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-                strokeWidth={1.5}
-              />
-            </Link>
+              <Link
+                href="/hire-me"
+                className="ml-4 px-5 py-2 border border-black dark:border-white rounded-full text-sm font-medium uppercase tracking-wider hover:bg-black hover:text-white dark:text-white dark:hover:bg-white dark:hover:text-black transition-colors duration-300 flex items-center gap-1 group"
+              >
+                <span>Hire Me</span>
+                <ArrowUpRight
+                  className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                  strokeWidth={1.5}
+                />
+              </Link>
+            </ClickSpark>
           </nav>
 
           {/* Mobile Menu Button */}
