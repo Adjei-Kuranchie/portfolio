@@ -1,9 +1,10 @@
-import Navigation from "@/components/Navigation";
+import { Header, HeroSection } from "@/components";
 
 export default function Home() {
   return (
     <>
-      <Navigation />
+      <Header />
+      <HeroSection />
     </>
   );
 }
