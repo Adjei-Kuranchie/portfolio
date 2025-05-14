@@ -1,10 +1,10 @@
 "use client";
 
+import { ClickSpark } from "@/components";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import ClickSpark from "./ui/clickspark";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +24,6 @@ export default function Header() {
   }, [scrolled]);
 
   const navItems = [
-    { name: "About", href: "/about" },
     { name: "Work", href: "/work" },
     { name: "Process", href: "/process" },
     { name: "Contact", href: "/contact" },

@@ -1,11 +1,11 @@
-import { About, Header, HeroSection } from "@/components";
+import { Header, HeroSection, TechStack } from "@/components";
 
 export default function Home() {
   return (
     <>
       <Header />
       <HeroSection />
-      <About />
+      <TechStack />
     </>
   );
 }
