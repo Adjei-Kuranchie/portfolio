@@ -1,5 +1,5 @@
 import { GlassIcons, ScrollFloat } from "@/components";
-import { items } from "@/lib/constants";
+import { techStack } from "@/lib/constants";
 
 const TechStack = () => {
   return (
@@ -16,8 +16,8 @@ const TechStack = () => {
             Tech Stack
           </ScrollFloat>
         </div>
-        <div className="h-[600px] relative">
-          <GlassIcons items={items} className="custom-class" />
+        <div className="max-h-[600px] relative pl-2">
+          <GlassIcons items={techStack} className="custom-class" />
         </div>
       </div>
     </section>

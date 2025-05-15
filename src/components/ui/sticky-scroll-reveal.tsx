@@ -11,6 +11,7 @@ export const StickyScroll = ({
     title: string;
     description: string;
     content?: React.ReactNode | any;
+    icon?: React.ReactNode;
   }[];
   contentClassName?: string;
 }) => {
@@ -39,11 +40,7 @@ export const StickyScroll = ({
     setActiveCard(closestBreakpointIndex);
   });
 
-  const backgroundColors = [
-    "#0f172a", // slate-900
-    "#000000", // black
-    "#171717", // neutral-900
-  ];
+  const backgroundColors = ["#09090b", "#000000", "#171717"];
   const linearGradients = [
     "linear-gradient(to bottom right, #06b6d4, #10b981)", // cyan-500 to emerald-500
     "linear-gradient(to bottom right, #ec4899, #6366f1)", // pink-500 to indigo-500
@@ -69,7 +66,7 @@ export const StickyScroll = ({
       <div className="div relative flex items-start px-4">
         <div className="max-w-2xl">
           {content.map((item, index) => (
-            <div key={item.title + index} className="my-20">
+            <div key={item.title + index} className="my-18">
               <motion.h2
                 initial={{
                   opacity: 0,
@@ -77,9 +74,9 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-2xl font-bold text-slate-100"
+                className="text-2xl font-bold text-slate-100 flex items-center justify-between"
               >
-                {item.title}
+                {item.title} {item.icon && item.icon}
               </motion.h2>
               <motion.p
                 initial={{
@@ -100,7 +97,7 @@ export const StickyScroll = ({
       <div
         style={{ background: backgroundGradient }}
         className={cn(
-          "sticky top-10 hidden h-60 w-80 overflow-hidden rounded-md bg-white lg:block",
+          "sticky top-10 hidden h-72 w-97 overflow-hidden rounded-md bg-white md:block",
           contentClassName
         )}
       >
