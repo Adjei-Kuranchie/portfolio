@@ -35,20 +35,21 @@ export const StickyScroll = ({
         }
         return acc;
       },
-      0
+      0,
     );
     setActiveCard(closestBreakpointIndex);
   });
 
-  const backgroundColors = ["#09090b", "#000000", "#171717"];
+  const backgroundColors = ["#09090b", "#222831", "#121220", "#214759"];
   const linearGradients = [
-    "linear-gradient(to bottom right, #06b6d4, #10b981)", // cyan-500 to emerald-500
-    "linear-gradient(to bottom right, #ec4899, #6366f1)", // pink-500 to indigo-500
-    "linear-gradient(to bottom right, #f97316, #eab308)", // orange-500 to yellow-500
+    "linear-gradient(to bottom right, #14a2ae, #6cfacd)",
+    "linear-gradient(to bottom right, #dfb0b8, #948979)",
+    "linear-gradient(to bottom right, #ecb7d6, #b993b2)",
+    "linear-gradient(to bottom right, #579b72, #b993b2)",
   ];
 
   const [backgroundGradient, setBackgroundGradient] = useState(
-    linearGradients[0]
+    linearGradients[0],
   );
 
   useEffect(() => {
@@ -98,7 +99,7 @@ export const StickyScroll = ({
         style={{ background: backgroundGradient }}
         className={cn(
           "sticky top-10 hidden h-72 w-97 overflow-hidden rounded-md bg-white md:block",
-          contentClassName
+          contentClassName,
         )}
       >
         {content[activeCard].content ?? null}

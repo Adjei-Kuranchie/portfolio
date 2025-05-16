@@ -81,7 +81,7 @@
   scrollbar-width: none;
 }
 
-:root::-webkit-scrollbar {
+*::-webkit-scrollbar{
   display: none;
 }
 

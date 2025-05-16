@@ -2,7 +2,14 @@
 
 import { ClickSpark } from "@/components";
 import { cn } from "@/lib/utils";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import {
+  ArrowUpRight,
+  Menu,
+  X,
+  Linkedin,
+  Github,
+  Instagram,
+} from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -24,9 +31,33 @@ export default function Header() {
   }, [scrolled]);
 
   const navItems = [
-    { name: "Work", href: "#work" },
-    { name: "Process", href: "/process" },
-    { name: "Contact", href: "/contact" },
+    {
+      name: "Instagram",
+      href: "https://instagram.com",
+      icon: (
+        <Instagram
+          className={"hover:fill-white hover:stroke-zinc-950 stroke-[1px]"}
+        />
+      ),
+    },
+    {
+      name: "LinkedIn",
+      href: "https://linkedin.com",
+      icon: (
+        <Linkedin
+          className={"hover:fill-white hover:stroke-zinc-950 stroke-[1px]"}
+        />
+      ),
+    },
+    {
+      name: "Github",
+      href: "https://github.com/Adjei-Kuranchie",
+      icon: (
+        <Github
+          className={"hover:fill-white hover:stroke-zinc-950 stroke-[1px]"}
+        />
+      ),
+    },
   ];
 
   return (
@@ -36,7 +67,7 @@ export default function Header() {
           "fixed top-0 left-0 w-full z-50 transition-all duration-500 ",
           scrolled
             ? "py-3 bg-transparent/90 backdrop-blur-md shadow-sm border-b border-black/10 dark:border-white/10"
-            : "py-6 bg-transparent"
+            : "py-6 bg-transparent",
         )}
       >
         <div className="container mx-auto px-4 md:px-6">
@@ -61,14 +92,15 @@ export default function Header() {
                   className="relative group"
                   onMouseEnter={() => setHoveredItem(item.name)}
                   onMouseLeave={() => setHoveredItem(null)}
+                  target={"_blank"}
                 >
-                  <span className="text-sm uppercase tracking-wider font-medium dark:text-white">
-                    {item.name}
+                  <span className="text-sm uppercase tracking-wider font-medium dark:text-white hover:fill-white hover:stroke-none transition-all duration-200 ease-in-out ">
+                    {item.icon}
                   </span>
                   <span
                     className={cn(
                       "absolute -bottom-1 left-0 w-0 h-[1px] bg-black dark:bg-white transition-all duration-300 ease-out",
-                      hoveredItem === item.name ? "w-full" : "w-0"
+                      hoveredItem === item.name ? "w-full" : "w-0",
                     )}
                   ></span>
                 </Link>
@@ -81,7 +113,7 @@ export default function Header() {
                 duration={400}
               >
                 <Link
-                  href="/hire-me"
+                  href="https://upwork.com"
                   className="ml-4 px-5 py-2 border border-black dark:border-white rounded-full text-sm font-medium uppercase tracking-wider hover:bg-black hover:text-white dark:text-white dark:hover:bg-white dark:hover:text-black transition-colors duration-300 flex items-center gap-1 group"
                 >
                   <span>Hire Me</span>
@@ -108,28 +140,39 @@ export default function Header() {
           </div>
         </div>
       </header>
+
       {/* Mobile Menu */}
       <div
         className={cn(
           "fixed inset-0 bg-white dark:bg-gray-900 z-40 flex flex-col justify-center items-center transition-all duration-500 ease-in-out md:hidden",
           isOpen
             ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-full pointer-events-none"
+            : "opacity-0 -translate-y-full pointer-events-none",
         )}
       >
-        <nav className="flex flex-col items-center space-y-8">
+        <nav className="flex flex-col items-center gap-8 w-full">
           {navItems.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className="text-3xl font-light tracking-wide hover:font-normal transition-all duration-300 dark:text-white"
-              onClick={() => setIsOpen(false)}
+              className="relative group"
+              onMouseEnter={() => setHoveredItem(item.name)}
+              onMouseLeave={() => setHoveredItem(null)}
+              target={"_blank"}
             >
-              {item.name}
+              <span className="text-sm uppercase tracking-wider font-medium dark:text-white hover:fill-white hover:stroke-none">
+                {item.name}
+              </span>
+              <span
+                className={cn(
+                  "absolute -bottom-1 left-0 w-0 h-[1px] bg-black dark:bg-white transition-all duration-300 ease-out",
+                  hoveredItem === item.name ? "w-full" : "w-0",
+                )}
+              ></span>
             </Link>
           ))}
           <Link
-            href="/hire-me"
+            href="https://upwork.com"
             className="mt-8 px-8 py-3 border border-black dark:border-white rounded-full text-lg font-medium hover:bg-black hover:text-white dark:text-white dark:hover:bg-white dark:hover:text-black transition-colors duration-300 flex items-center gap-2"
             onClick={() => setIsOpen(false)}
           >
