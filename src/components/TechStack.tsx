@@ -16,7 +16,7 @@ const TechStack = () => {
             Tech Stack
           </ScrollFloat>
         </div>
-        <div className="max-h-[600px] relative pl-2">
+        <div className="min-h-[600px] relative pl-2">
           <GlassIcons items={techStack} className="custom-class" />
         </div>
       </div>

@@ -81,18 +81,15 @@
   scrollbar-width: none;
 }
 
-*::-webkit-scrollbar{
-  display: none;
-}
-
-.no-scrollbar {
-  /* display: none; */
+*{
   scrollbar-width: none;
 
-  &::-webkit-scrollbar {
+  &::-webkit-scrollbar{
     display: none;
   }
 }
+
+
 
 
 .dark {

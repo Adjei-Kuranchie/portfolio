@@ -3,19 +3,14 @@ import StackIcon from "tech-stack-icons";
 import { Button } from "@/components";
 import Link from "next/link";
 
-type TechStackCardProps = {
+type WorkCard = {
   image?: string;
   alt?: string;
   iconList?: string[];
   liveUrl?: string;
 };
 
-const TechStackCard = ({
-  image,
-  alt,
-  iconList,
-  liveUrl,
-}: TechStackCardProps) => {
+const WorkCard = ({ image, alt, iconList, liveUrl }: WorkCard) => {
   return (
     <div className="relative flex h-full w-full items-center justify-center">
       {image && <Image src={image} fill alt={alt ?? "Tech stack image"} />}
@@ -46,4 +41,4 @@ const TechStackCard = ({
     </div>
   );
 };
-export default TechStackCard;
+export default WorkCard;

@@ -16,6 +16,8 @@ export const StickyScroll = ({
   contentClassName?: string;
 }) => {
   const [activeCard, setActiveCard] = React.useState(0);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
+
   const ref = useRef<any>(null);
   const { scrollYProgress } = useScroll({
     // uncomment line 22 and comment line 23 if you DONT want the overflow container and want to have it change on the entire page scroll
@@ -40,21 +42,36 @@ export const StickyScroll = ({
     setActiveCard(closestBreakpointIndex);
   });
 
-  const backgroundColors = ["#09090b", "#222831", "#121220", "#214759"];
-  const linearGradients = [
-    "linear-gradient(to bottom right, #14a2ae, #6cfacd)",
-    "linear-gradient(to bottom right, #dfb0b8, #948979)",
-    "linear-gradient(to bottom right, #ecb7d6, #b993b2)",
-    "linear-gradient(to bottom right, #579b72, #b993b2)",
-  ];
+  const backgroundColors = isDarkMode
+    ? ["#09090b", "#222831", "#121220", "#214759"]
+    : ["#f0f0f0", "#fcefee", "#e0f7fa", "#e8f5e9"]; // light mode backgrounds
+
+  const linearGradients = isDarkMode
+    ? [
+        "linear-gradient(to bottom right, #14a2ae, #6cfacd)",
+        "linear-gradient(to bottom right, #dfb0b8, #948979)",
+        "linear-gradient(to bottom right, #ecb7d6, #b993b2)",
+        "linear-gradient(to bottom right, #579b72, #b993b2)",
+      ]
+    : [
+        "linear-gradient(to bottom right, #90caf9, #e3f2fd)",
+        "linear-gradient(to bottom right, #ffe0b2, #fff3e0)",
+        "linear-gradient(to bottom right, #c5e1a5, #e8f5e9)",
+        "linear-gradient(to bottom right, #f8bbd0, #fce4ec)",
+      ];
 
   const [backgroundGradient, setBackgroundGradient] = useState(
     linearGradients[0],
   );
 
   useEffect(() => {
+    const matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
+    setIsDarkMode(matchMedia.matches);
+    const handler = (e: MediaQueryListEvent) => setIsDarkMode(e.matches);
+    matchMedia.addEventListener("change", handler);
     setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
-  }, [activeCard]);
+    return () => matchMedia.removeEventListener("change", handler);
+  }, [activeCard, isDarkMode]);
 
   return (
     <motion.div
@@ -75,7 +92,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-2xl font-bold text-slate-100 flex items-center justify-between"
+                className="text-2xl font-bold text-slate-600 flex items-center justify-between"
               >
                 {item.title} {item.icon && item.icon}
               </motion.h2>
@@ -86,7 +103,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-kg mt-10 max-w-sm text-slate-300"
+                className="text-kg mt-10 max-w-sm text-slate-500"
               >
                 {item.description}
               </motion.p>
