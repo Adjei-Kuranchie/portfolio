@@ -1,53 +1,75 @@
 import { Button, WorkCard } from "@/components";
 import Link from "next/link";
-import StackIcon from "tech-stack-icons";
+import {
+  SiBootstrap,
+  SiCss3,
+  SiFramer,
+  SiGit,
+  SiGithub,
+  SiHtml5,
+  SiJavascript,
+  SiLinux,
+  SiMongodb,
+  SiNetlify,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPostgresql,
+  SiPython,
+  SiReact,
+  SiShadcnui,
+  SiSupabase,
+  SiTailwindcss,
+  SiThreedotjs,
+  SiTypescript,
+  SiVite,
+} from "react-icons/si";
 
 export const techStack = [
-  { icon: <StackIcon name={"reactjs"} />, label: "React js" },
-  { icon: <StackIcon name={"nodejs"} />, label: "Node js" },
-  { icon: <StackIcon name={"mongodb"} />, label: "Mongo DB" },
-  { icon: <StackIcon name={"supabase"} />, label: "Supabase" },
-  { icon: <StackIcon name={"python"} />, label: "Python" },
-  { icon: <StackIcon name={"linux"} />, label: "Linux" },
+  { icon: <SiReact />, label: "React js" },
+  { icon: <SiNodedotjs />, label: "Node js" },
+  { icon: <SiMongodb />, label: "Mongo DB" },
+  { icon: <SiSupabase />, label: "Supabase" },
+  { icon: <SiPython />, label: "Python" },
+  { icon: <SiLinux />, label: "Linux" },
   {
-    icon: <StackIcon name={"nextjs2"} className="dark:invert" />,
+    icon: <SiNextdotjs />,
     label: "Next js",
   },
   {
-    icon: <StackIcon name={"tailwindcss"} />,
+    icon: <SiTailwindcss />,
     label: "Tailwind",
   },
   {
-    icon: <StackIcon name={"bootstrap5"} />,
+    icon: <SiBootstrap />,
     label: "Bootstrap",
   },
   {
-    icon: <StackIcon name={"shadcnui"} className="dark:invert" />,
+    icon: <SiShadcnui />,
     label: "Shadcn UI",
   },
   {
-    icon: <StackIcon name={"threejs"} className="dark:invert" />,
+    icon: <SiThreedotjs />,
     label: "Three js",
   },
 
   {
-    icon: <StackIcon name={"typescript"} />,
+    icon: <SiTypescript />,
     label: "Typescript",
   },
   {
-    icon: <StackIcon name={"postgresql"} />,
+    icon: <SiPostgresql />,
     label: "Postgresql",
   },
   {
-    icon: <StackIcon name={"framer"} className="dark:invert" />,
+    icon: <SiFramer />,
     label: "Framer",
   },
   {
-    icon: <StackIcon name={"git"} />,
+    icon: <SiGit />,
     label: "Git",
   },
   {
-    icon: <StackIcon name={"netlify2"} />,
+    icon: <SiNetlify />,
     label: "Netlify",
   },
 ];
@@ -63,13 +85,13 @@ export const workContent = [
         target="_blank"
       >
         <Button variant={"secondary"} className="w-8 h-8 p-0">
-          <StackIcon name={"github"} className="w-4 h-4 dark:invert" />
+          <SiGithub className="w-4 h-4" />
         </Button>
       </Link>
     ),
     content: (
       <WorkCard
-        iconList={["typescript", "reactjs", "tailwindcss"]}
+        iconList={[SiTypescript, SiReact, SiTailwindcss]}
         alt="Unitrack"
       />
     ),
@@ -84,14 +106,14 @@ export const workContent = [
         target="_blank"
       >
         <Button variant={"secondary"} className="w-8 h-8 p-0">
-          <StackIcon name={"github"} className="w-4 h-4 dark:invert" />
+          <SiGithub className="w-4 h-4" />
         </Button>
       </Link>
     ),
 
     content: (
       <WorkCard
-        iconList={["reactjs", "vitejs", "tailwindcss"]}
+        iconList={[SiReact, SiVite, SiTailwindcss]}
         alt="Unitrack"
         liveUrl="https://adjei-fitness-app-with-rapidapi.netlify.app"
         image="/fitness_app.jpeg"
@@ -104,17 +126,17 @@ export const workContent = [
       "2D portfolio made with HTML5, CSS3,Javascript using Kaboom.js",
     icon: (
       <Link
-        href={"https://github.com/Adjei-Kuranchie/2D-Porfolio-With-Kaboom.js"}
+        href={"https://github.com/Adjei-Kuranchie/2D-Portfolio-With-Kaboom.js"}
         target="_blank"
       >
         <Button variant={"secondary"} className="w-8 h-8 p-0">
-          <StackIcon name={"github"} className="w-4 h-4 dark:invert" />
+          <SiGithub className="w-4 h-4" />
         </Button>
       </Link>
     ),
     content: (
       <WorkCard
-        iconList={["html5", "css3", "js"]}
+        iconList={[SiHtml5, SiCss3, SiJavascript]}
         alt="Unitrack"
         liveUrl="https://adjei-portfolio-with-kaboomjs.netlify.app/"
         image="/portfolio_kaboom.jpeg"
