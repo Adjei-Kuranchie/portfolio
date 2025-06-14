@@ -1,5 +1,5 @@
-import { LinkPreview, ScrollFloat } from "@/components/index";
-import { Facebook, Instagram, Twitter } from "lucide-react";
+import { ScrollFloat } from "@/components/index";
+import Link from "next/link";
 
 function Contact() {
   return (
@@ -13,34 +13,42 @@ function Contact() {
             scrollEnd="bottom bottom-=40%"
             stagger={0.03}
           >
-            Contact Me
+            Contact Me &amp; Let&apos;s Connect
           </ScrollFloat>
         </div>
         <div
           className={`grid grid-cols-2 font-bold text-lg text-stone-800 dark:text-white `}
         >
           <div className={`flex flex-col gap-2`}>
-            <LinkPreview
-              url="https://www.instagram.com/kuranchie.a/"
+            <Link
+              href="https://www.instagram.com/kuranchie.a/"
               className="font-bold gap-1 items-center inline-flex"
+              target="_blank"
             >
-              <Instagram className={`w-4 h-4`} />
               Instagram
-            </LinkPreview>
-            <LinkPreview
-              url="https://facebook.com"
+            </Link>
+
+            <Link
+              href="https://www.linkedin.com/in/kuranchie/"
               className="font-bold gap-1 items-center inline-flex"
+              target="_blank"
             >
-              <Facebook className={`w-4 h-4`} />
-              Facebook
-            </LinkPreview>
-            <LinkPreview
-              url="https://twitter.com"
+              LinkedIn
+            </Link>
+            <Link
+              href="tel:+233598386200"
               className="font-bold gap-1 items-center inline-flex"
+              target="_blank"
             >
-              <Twitter className={`w-4 h-4`} />
-              Twitter
-            </LinkPreview>
+              Phone
+            </Link>
+            <Link
+              href="mailto:kaynkuranchie@gmail.com"
+              className="font-bold gap-1 items-center inline-flex"
+              target="_blank"
+            >
+              Email
+            </Link>
           </div>
         </div>
       </div>

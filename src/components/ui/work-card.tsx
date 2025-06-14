@@ -1,7 +1,7 @@
-import Image from "next/image";
-import StackIcon from "tech-stack-icons";
 import { Button } from "@/components";
+import Image from "next/image";
 import Link from "next/link";
+import StackIcon from "tech-stack-icons";
 
 type WorkCard = {
   image?: string;
@@ -33,7 +33,7 @@ const WorkCard = ({ image, alt, iconList, liveUrl }: WorkCard) => {
             "absolute flex w-full p-4 items-center justify-end bottom-2.5 right-2"
           }
         >
-          <Button variant={"ghost"}>
+          <Button variant={"secondary"}>
             <Link href={liveUrl}>Live Demo</Link>
           </Button>
         </div>

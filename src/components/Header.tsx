@@ -4,11 +4,11 @@ import { ClickSpark } from "@/components";
 import { cn } from "@/lib/utils";
 import {
   ArrowUpRight,
-  Menu,
-  X,
-  Linkedin,
   Github,
   Instagram,
+  Linkedin,
+  Menu,
+  X,
 } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -42,7 +42,7 @@ export default function Header() {
     },
     {
       name: "LinkedIn",
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/kuranchie/",
       icon: (
         <Linkedin
           className={"hover:fill-white hover:stroke-zinc-950 stroke-[1px]"}
@@ -67,7 +67,7 @@ export default function Header() {
           "fixed top-0 left-0 w-full z-50 transition-all duration-500 ",
           scrolled
             ? "py-3 bg-transparent/90 backdrop-blur-md shadow-sm border-b border-black/10 dark:border-white/10"
-            : "py-6 bg-transparent",
+            : "py-6 bg-transparent"
         )}
       >
         <div className="container mx-auto px-4 md:px-6">
@@ -100,7 +100,7 @@ export default function Header() {
                   <span
                     className={cn(
                       "absolute -bottom-1 left-0 w-0 h-[1px] bg-black dark:bg-white transition-all duration-300 ease-out",
-                      hoveredItem === item.name ? "w-full" : "w-0",
+                      hoveredItem === item.name ? "w-full" : "w-0"
                     )}
                   ></span>
                 </Link>
@@ -147,7 +147,7 @@ export default function Header() {
           "fixed inset-0 bg-white dark:bg-gray-900 z-40 flex flex-col justify-center items-center transition-all duration-500 ease-in-out md:hidden",
           isOpen
             ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-full pointer-events-none",
+            : "opacity-0 -translate-y-full pointer-events-none"
         )}
       >
         <nav className="flex flex-col items-center gap-8 w-full">
@@ -166,7 +166,7 @@ export default function Header() {
               <span
                 className={cn(
                   "absolute -bottom-1 left-0 w-0 h-[1px] bg-black dark:bg-white transition-all duration-300 ease-out",
-                  hoveredItem === item.name ? "w-full" : "w-0",
+                  hoveredItem === item.name ? "w-full" : "w-0"
                 )}
               ></span>
             </Link>

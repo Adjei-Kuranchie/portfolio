@@ -33,10 +33,10 @@ export default function HeroSection() {
                 >
                   <Link
                     href="#work"
-                    className="group inline-flex items-center gap-2 text-lg font-medium px-6 py-3 border-2  border-stone-950 dark:border-white text-stone-900 dark:text-white hover:bg-stone-900 dark:hover:bg-white hover:text-white dark:hover:text-stone-900 transition-all duration-300"
+                    className="group/link inline-flex items-center gap-2 text-lg font-medium px-6 py-3 border-2  border-stone-950 dark:border-white text-stone-900 dark:text-white hover:bg-stone-900 dark:hover:bg-white hover:text-white dark:hover:text-stone-900 transition-all duration-300"
                   >
                     View Projects
-                    <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                    <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover/link:translate-x-1" />
                   </Link>
                 </ClickSpark>
               </div>
@@ -45,11 +45,11 @@ export default function HeroSection() {
         </div>
 
         {/* Scroll indicator */}
-        {/* <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
-        <div className="w-8 h-12 rounded-full border-2 border-black dark:border-white flex items-start justify-center">
-          <div className="w-1 h-3 bg-black dark:bg-white rounded-full mt-2 animate-scroll-down" />
-        </div>
-      </div> */}
+        {/* <div className="absolute bottom-12 -right-4 transform -translate-x-1/2 z-20 animate-bounce">
+          <div className="w-8 h-12 rounded-full border-2 border-black dark:border-white flex items-start justify-center">
+            <div className="w-1 h-3 bg-black dark:bg-white rounded-full mt-2 animate-scroll-down" />
+          </div>
+        </div> */}
       </section>
     </HeroHighlight>
   );
