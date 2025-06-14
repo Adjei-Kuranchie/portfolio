@@ -71,7 +71,7 @@ export const StickyScroll = ({
     matchMedia.addEventListener("change", handler);
     setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
     return () => matchMedia.removeEventListener("change", handler);
-  }, [activeCard, isDarkMode]);
+  }, [activeCard, isDarkMode, linearGradients]);
 
   return (
     <motion.div

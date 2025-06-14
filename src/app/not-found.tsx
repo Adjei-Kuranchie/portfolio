@@ -90,7 +90,7 @@ const NotFound = () => {
               Page Not Found
             </h1>
             <p className="text-lg md:text-xl max-w-2xl mx-auto text-gray-700 dark:text-gray-300 leading-relaxed">
-              Sorry, the page you're looking for doesn't exist. It might have
+              Sorry, the page you&apos;re looking for doesn&apos;t exist. It might have
               been moved, deleted, or you entered the wrong URL.
             </p>
           </div>
@@ -145,7 +145,7 @@ const NotFound = () => {
 
           {/* Help text */}
           <div className="mt-12 text-gray-600 dark:text-gray-400 text-sm">
-            <p>Need help? Let's get you back on track.</p>
+            <p>Need help? Let&apos;s get you back on track.</p>
           </div>
         </div>
       </div>
