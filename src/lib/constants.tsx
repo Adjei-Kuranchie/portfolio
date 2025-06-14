@@ -1,4 +1,4 @@
-import { WorkCard } from "@/components";
+import { Button, WorkCard } from "@/components";
 import Link from "next/link";
 import StackIcon from "tech-stack-icons";
 
@@ -56,13 +56,15 @@ export const workContent = [
   {
     title: "Attendance System",
     description:
-      "Effortlessly track attendance using geolocation. Our system allows users to check in with a single tap, automatically verifying their presence at the correct location. Say goodbye to manual roll calls and streamline attendance management with real-time, location-based accuracy.",
+      "Effortlessly track attendance using geolocation. Our system allows users to check in with a single tap, automatically verifying their presence at the correct location. Say goodbye to manual roll calls and streamline attendance management with real-time, location-based accuracy. Currently under development.",
     icon: (
       <Link
         href={"https://github.com/Adjei-Kuranchie/Unitrack"}
         target="_blank"
       >
-        <StackIcon name={"github"} className="w-4 h-4 dark:invert" />
+        <Button variant={"secondary"} className="w-8 h-8 p-0">
+          <StackIcon name={"github"} className="w-4 h-4 dark:invert" />
+        </Button>
       </Link>
     ),
     content: (
@@ -81,7 +83,9 @@ export const workContent = [
         href={"https://github.com/Adjei-Kuranchie/fitness-app"}
         target="_blank"
       >
-        <StackIcon name={"github"} className="w-4 h-4 dark:invert" />
+        <Button variant={"secondary"} className="w-8 h-8 p-0">
+          <StackIcon name={"github"} className="w-4 h-4 dark:invert" />
+        </Button>
       </Link>
     ),
 
@@ -103,7 +107,9 @@ export const workContent = [
         href={"https://github.com/Adjei-Kuranchie/2D-Porfolio-With-Kaboom.js"}
         target="_blank"
       >
-        <StackIcon name={"github"} className="w-4 h-4 dark:invert" />
+        <Button variant={"secondary"} className="w-8 h-8 p-0">
+          <StackIcon name={"github"} className="w-4 h-4 dark:invert" />
+        </Button>
       </Link>
     ),
     content: (
